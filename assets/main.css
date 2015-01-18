@@ -25,6 +25,9 @@
 #mission {
     margin-top: -230px;
 }
+#marriage {
+    margin-top: -200px
+}
 .bcg {
     background-position: center center;
     background-repeat: no-repeat;
@@ -40,6 +43,20 @@
 p {
     font-size: 14px;
 }
+.caption {
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 172px 15px 15px 15px;
+    color: white;
+    width: 180px;
+    height: 180px;
+    padding: 60px 0px 45px 0px;
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+
 #copy {
     color: #666666 !important
 }
