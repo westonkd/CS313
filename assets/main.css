@@ -15,7 +15,7 @@
     padding: 0 8%;
     text-align: center
 }
-.hsContent h2 {
+.hsContent h2, h4 {
     color: white;
 }
 #go-down {
