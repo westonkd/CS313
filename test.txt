@@ -1,0 +1,4 @@
+?<Favorite Character>|luke:0|leia:0|han:0|chewey:0|yoda:0|vadar:0|other:0?
+?<Favorite Movie>|1:0|2:0|3:0|4:0|5:0|6:0|7:0?
+?<Saber Color>|blue:0|green:0|purple:0|pink:0|red:0|other:0?
+?<Trailer Results>|1:0|2:0|3:0|4:0|5:0?

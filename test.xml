@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<StarWarsSurvey>
+	<question name="Favorite Character">
+		<option name="luke">1</option>
+		<option name="leia">1</option>
+		<option name="han">4</option>
+		<option name="chewey">0</option>
+		<option name="yoda">2</option>
+		<option name="vadar">2</option>
+		<option name="other">1</option>
+	</question>
+
+	<question name="Favorite Movie">
+		<option name="1">2</option>
+		<option name="2">2</option>
+		<option name="3">1</option>
+		<option name="4">2</option>
+		<option name="5">5</option>
+		<option name="6">1</option>
+	</question>
+
+	<question name="Lightsaber Color">
+		<option name="blue">0</option>
+		<option name="green">1</option>
+		<option name="purple">0</option>
+		<option name="pink">2</option>
+		<option name="red">4</option>
+		<option name="other">1</option>
+	</question>
+
+	<question name="Trailer Results">
+		<option name="1">3</option>
+		<option name="2">4</option>
+		<option name="3">0</option>
+		<option name="4">1</option>
+		<option name="5">0</option>
+	</question>
+	
+</StarWarsSurvey>
