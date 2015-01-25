@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (1 == 2 && isset($_SESSION['taken'])) {
+if (isset($_SESSION['taken'])) {
 	header("Location: results.php");
 	exit();
 } 
