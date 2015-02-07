@@ -17,6 +17,11 @@ if (!isset($_SESSION["signed-in"]))
 	$stmt = $db->prepare("SELECT * FROM user WHERE email=:email ");
 	$stmt->execute(array(':email' => $_SESSION['email']));
 	$user = $stmt->fetch();
+
+	//get the current goal
+	$stmt = $db->prepare("SELECT * FROM goal g JOIN user u ON g.id = u.id WHERE email=:email AND is_current_goal=11");
+	$stmt->execute(array(':email' => $_SESSION['email']));
+	$currentGoal = $stmt->fetch();
 }
 
 ?>
@@ -64,8 +69,6 @@ if (!isset($_SESSION["signed-in"]))
 		</div>
 	</div>
 
-
-
 	<!--main content-->
 	<main class="container">
 		<section class="row">
@@ -86,15 +89,11 @@ if (!isset($_SESSION["signed-in"]))
 					<p>75 %</p>
 
 					<a href="#" class="btn btn-success update-status">Update Progress</a>
+
+					<?php echo $currentGoal['title']; ?>
 				</div>
 			</div>
 		</section>	
-
-		<div>
-			
-			
-
-		</div>
 
 		<!--history-->
 		<section class="row">
