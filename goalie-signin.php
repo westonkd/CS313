@@ -1,4 +1,8 @@
-<?php  ?>
+<?php  
+	session_start();
+
+    
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,12 +28,12 @@
 			<div class="col-all-12">
 				<div class="sign-in">
 					<h1>Goalie Sign In</h1>
-					<form class="form-horizontal">
+					<form class="form-horizontal" action="goalie.php">
 						<fieldset>
 							<div class="form-group">
 								<label for="inputEmail" class="col-lg-2 control-label">Email</label>
 								<div class="col-lg-10">
-									<input type="text" class="form-control" id="inputEmail" placeholder="Email">
+									<input name="email" type="text" class="form-control" id="inputEmail" placeholder="Email">
 								</div>
 							</div>
 							<div class="form-group">
