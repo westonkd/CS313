@@ -12,8 +12,8 @@ if (!isset($_SESSION["signed-in"]))
 	$db = loadDatabase();
 
 	//get the current user
-	//echo "SELECT first_name, last_name FROM user WHERE email=" . $_POST['email'];
-	$db->query("SELECT first_name, last_name FROM user WHERE email=" . $_POST['email']) as $curretUser;
+	$userQuery = "SELECT first_name, last_name FROM user WHERE email=" . $_POST['email'];
+	$test = $db->query($userQuery);
 }
 
 ?>
