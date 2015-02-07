@@ -86,7 +86,7 @@ if (!isset($_SESSION["signed-in"]))
 					<p><?php echo $currentGoal['last_updated']; ?></p>
 
 					<h4>Goal Progress Complete</h4>
-					<p>7<?php echo $currentGoal['percent_complete']; ?>%</p>
+					<p><?php echo $currentGoal['percent_complete']; ?>%</p>
 
 					<a href="#" class="btn btn-success update-status">Update Progress</a>
 				</div>
@@ -153,6 +153,30 @@ if (!isset($_SESSION["signed-in"]))
 						<div class="checkbox">
 							<label>
 								<input type="checkbox"> Wednesday
+							</label>
+						</div>
+
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Thursday
+							</label>
+						</div>
+
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Friday
+							</label>
+						</div>
+
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Saturday
+							</label>
+						</div>
+
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Sunday
 							</label>
 						</div>
 
