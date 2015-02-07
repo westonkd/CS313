@@ -19,7 +19,7 @@ if (!isset($_SESSION["signed-in"]))
 	$user = $stmt->fetch();
 
 	//get the current goal
-	$stmt = $db->prepare("SELECT * FROM goal INNER JOIN user ON goal.user_id = user.id WHERE email=:email");
+	$stmt = $db->prepare("SELECT * FROM goal INNER JOIN user ON goal.user_id = user.id WHERE email=:email AND is_current_goal=1");
 	$stmt->execute(array(':email' => $_SESSION['email']));
 	$currentGoal = $stmt->fetch();
 }
@@ -89,16 +89,6 @@ if (!isset($_SESSION["signed-in"]))
 					<p>7<?php echo $currentGoal['percent_complete']; ?>%</p>
 
 					<a href="#" class="btn btn-success update-status">Update Progress</a>
-
-					<p>
-					<?php 
-						echo "currentgoal" .; 
-						echo "test: ". $stmt;
-						echo "test2: ".$currentGoal;
-					?>
-					</p>
-
-
 				</div>
 			</div>
 		</section>	
