@@ -79,14 +79,14 @@ if (!isset($_SESSION["signed-in"]))
 			</div>
 			<div class="col-md-6">
 				<div id="current-goal-info">
-					<h2><?php $currentGoal['title'] ?></h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum rerum reiciendis voluptatum iure ipsam possimus aliquam.</p>
+					<h2><?php echo $currentGoal['title']; ?></h2>
+					<p><?php echo $currentGoal['description']; ?></p>
 
 					<h4>Goal Last Updated</h4>
-					<p>January 30, 2014</p>
+					<p><?php echo $currentGoal['last_updated']; ?></p>
 
 					<h4>Goal Progress Complete</h4>
-					<p>75 %</p>
+					<p>7<?php echo $currentGoal['percent_complete']; ?>%</p>
 
 					<a href="#" class="btn btn-success update-status">Update Progress</a>
 
