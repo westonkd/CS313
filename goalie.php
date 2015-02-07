@@ -19,7 +19,7 @@ if (!isset($_SESSION["signed-in"]))
 	$user = $stmt->fetch();
 
 	//get the current goal
-	$stmt = $db->prepare("SELECT * FROM goal g JOIN user u ON g.id = u.id WHERE email=:email AND is_current_goal=11");
+	$stmt = $db->prepare("SELECT * FROM goal g JOIN user u ON g.id = u.id WHERE email=:email");
 	$stmt->execute(array(':email' => $_SESSION['email']));
 	$currentGoal = $stmt->fetch();
 }
@@ -90,7 +90,7 @@ if (!isset($_SESSION["signed-in"]))
 
 					<a href="#" class="btn btn-success update-status">Update Progress</a>
 
-					<?php echo $currentGoal['title']; ?>
+					<?php echo "currentgoal" $currentGoal['title']; ?>
 				</div>
 			</div>
 		</section>	
