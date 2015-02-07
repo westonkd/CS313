@@ -13,7 +13,7 @@ if (!isset($_SESSION["signed-in"]))
 
 	//get the current user
 	$userQuery = "SELECT first_name, last_name FROM user WHERE email=" . $_POST['email'];
-	$test = $db->query($userQuery);
+	$currentUser = $db->query($userQuery);
 }
 
 ?>
@@ -60,7 +60,7 @@ if (!isset($_SESSION["signed-in"]))
 			</div>
 		</div>
 	</div>
-
+	<?php echo $currenUser; ?>
 	<!--main content-->
 	<main class="container">
 		<section class="row">
