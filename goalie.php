@@ -79,7 +79,7 @@ if (!isset($_SESSION["signed-in"]))
 			</div>
 			<div class="col-md-6">
 				<div id="current-goal-info">
-					<h2>Run Every Day</h2>
+					<h2><?php $currentGoal['title'] ?></h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum rerum reiciendis voluptatum iure ipsam possimus aliquam.</p>
 
 					<h4>Goal Last Updated</h4>
@@ -92,7 +92,7 @@ if (!isset($_SESSION["signed-in"]))
 
 					<p>
 					<?php 
-						echo "currentgoal" .$currentGoal['title']; 
+						echo "currentgoal" .; 
 						echo "test: ". $stmt;
 						echo "test2: ".$currentGoal;
 					?>
