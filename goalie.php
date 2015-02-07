@@ -85,6 +85,18 @@ if (!isset($_SESSION["signed-in"]))
 			</div>
 		</section>	
 
+		<div>
+			
+			<?php 
+				$userQuery = "SELECT first_name, last_name FROM user WHERE email='" . $_POST['email']."'";
+				$currentUser = $db->query($userQuery);
+				echo "query: ".$userQuery;
+				echo "object: ".$curretUser;
+				echo "post: ".$_POST['email'];
+			 ?>
+
+		</div>
+
 		<!--history-->
 		<section class="row">
 			<div class="col-all-12">
