@@ -64,7 +64,14 @@ if (!isset($_SESSION["signed-in"]))
 		</div>
 	</div>
 
-	<?php echo $_SESSION['email']; ?>
+	<p>
+		<?php 
+		echo "session".$_SESSION['email']."\n";
+		echo "user".$user['first_name']; 
+		?>
+
+	</p>
+
 
 	<!--main content-->
 	<main class="container">
