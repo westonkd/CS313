@@ -1,0 +1,25 @@
+#goal-container {
+	text-align: center;
+}
+
+#current-goal-info, #goal-container{
+	margin-top: 150px;	
+}
+
+#progress-label {
+	float: left;
+	margin-top: 200px;
+}
+
+.history {
+	margin-top : 50px;
+}
+
+.sign-in {
+	margin-top: 100px;
+	padding: 25px 75px 50px 75px;
+}
+
+.form-control {
+	margin-bottom: 10px;
+}

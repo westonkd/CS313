@@ -1,0 +1,80 @@
+mysql> show tables;
++------------------+
+| Tables_in_goalie |
++------------------+
+| goal             |
+| preferences      |
+| user             |
++------------------+
+
+mysql> describe goal;
++------------------+--------------+------+-----+---------+----------------+
+| Field            | Type         | Null | Key | Default | Extra          |
++------------------+--------------+------+-----+---------+----------------+
+| id               | int(11)      | NO   | PRI | NULL    | auto_increment |
+| title            | varchar(255) | NO   |     | NULL    |                |
+| description      | text         | YES  |     | NULL    |                |
+| date_set         | datetime     | NO   |     | NULL    |                |
+| date_to_finish   | datetime     | NO   |     | NULL    |                |
+| percent_complete | int(3)       | NO   |     | NULL    |                |
+| last_updated     | datetime     | NO   |     | NULL    |                |
+| is_current_goal  | bit(2)       | NO   |     | NULL    |                |
+| user_id          | int(11)      | NO   | MUL | NULL    |                |
++------------------+--------------+------+-----+---------+----------------+
+| goal  | CREATE TABLE `goal` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `description` text,
+  `date_set` datetime NOT NULL,
+  `date_to_finish` datetime NOT NULL,
+  `percent_complete` int(3) NOT NULL,
+  `last_updated` datetime NOT NULL,
+  `is_current_goal` bit(2) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
+
+
+mysql> describe preferences;
++------------+------------+------+-----+---------+----------------+
+| Field      | Type       | Null | Key | Default | Extra          |
++------------+------------+------+-----+---------+----------------+
+| id         | int(11)    | NO   | PRI | NULL    | auto_increment |
+| back_color | varchar(7) | YES  |     | NULL    |                |
+| for_color  | varchar(7) | YES  |     | NULL    |                |
++------------+------------+------+-----+---------+----------------+
+| preferences | CREATE TABLE `preferences` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `back_color` varchar(7) DEFAULT NULL,
+  `for_color` varchar(7) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
+
+
+mysql> describe user;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id           | int(11)      | NO   | PRI | NULL    | auto_increment |
+| first_name   | varchar(255) | NO   |     | NULL    |                |
+| last_name    | varchar(255) | NO   |     | NULL    |                |
+| email        | varchar(255) | NO   |     | NULL    |                |
+| password     | varchar(50)  | NO   |     | NULL    |                |
+| last_visited | datetime     | NO   |     | NULL    |                |
+| pref_id      | int(11)      | YES  | MUL | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+| user  | CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `last_visited` datetime NOT NULL,
+  `pref_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pref_id` (`pref_id`),
+  CONSTRAINT `pref_id` FOREIGN KEY (`pref_id`) REFERENCES `preferences` (`id`),
+  CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id`) REFERENCES `preferences` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
