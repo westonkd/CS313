@@ -1,8 +1,6 @@
 <?php  
-	$dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
-$dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');
-$dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
-$dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+require("dbConnector.php");
+$db = loadDatabase();
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +24,6 @@ $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 	<script src="assets/Chart.min.js"></script>
 </head>
 <body>
-	<h1><?php echo "host:$dbHost:$dbPort dbName:$dbName user:$dbUser password:$dbPassword" ?></h1>
 	<!--Navigation-->
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
@@ -69,6 +66,13 @@ $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 					<p>75 %</p>
 
 					<a href="#" class="btn btn-success update-status">Update Progress</a>
+
+					<?php 
+					foreach ($db->query("SELECT first_name FROM user") as $row)
+					{
+						echo "<h1>" . $row['first_name'] . "</h1>";
+					}
+					?>
 				</div>
 			</div>
 		</section>	
@@ -77,31 +81,31 @@ $dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 		<section class="row">
 			<div class="col-all-12">
 				<div class="history">
-				<h4>Goal History</h4>
+					<h4>Goal History</h4>
 					<table class="table table-striped table-hover">
-					<thead>
-						<tr>
-							<th>Goal Name</th>
-							<th>Date Set</th>
-							<th>Date Finished</th>
-							<th>Percent Complete</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Column content</td>
-							<td>Column content</td>
-							<td>Column content</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>Column content</td>
-							<td>Column content</td>
-							<td>Column content</td>
-						</tr>
-					</tbody>
-				</table> 
+						<thead>
+							<tr>
+								<th>Goal Name</th>
+								<th>Date Set</th>
+								<th>Date Finished</th>
+								<th>Percent Complete</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Column content</td>
+								<td>Column content</td>
+								<td>Column content</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Column content</td>
+								<td>Column content</td>
+								<td>Column content</td>
+							</tr>
+						</tbody>
+					</table> 
 				</div>
 			</div>
 		</section>
