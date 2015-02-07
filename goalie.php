@@ -16,7 +16,7 @@ if (!isset($_SESSION["signed-in"]))
 	//get the current user
 	$stmt = $db->prepare("SELECT * FROM user WHERE email=:email ");
 	$stmt->execute(array(':email' => $_SESSION['email']));
-	$user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	$user = $stmt->fetch();
 }
 
 ?>
@@ -63,6 +63,8 @@ if (!isset($_SESSION["signed-in"]))
 			</div>
 		</div>
 	</div>
+
+	<?php echo $_SESSION['email']; ?>
 
 	<!--main content-->
 	<main class="container">
