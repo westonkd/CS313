@@ -56,7 +56,7 @@ if (!isset($_SESSION["signed-in"]))
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="goalie-new-goal.php">Set a New Goal</a></li>
-					<li><a href="goalie-settings.php"><?php //echo $user[0]['first_name'] ?>'s Settings</a></li>
+					<li><a href="goalie-settings.php"><?php echo $user['first_name'] ?>'s Settings</a></li>
 					<li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">Logout</a></li>
 				</ul>
 
@@ -64,13 +64,6 @@ if (!isset($_SESSION["signed-in"]))
 		</div>
 	</div>
 
-	<p>
-		<?php 
-		echo "session".$_SESSION['email']."\n";
-		echo "user".$user['first_name']; 
-		?>
-
-	</p>
 
 
 	<!--main content-->
