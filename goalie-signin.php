@@ -5,7 +5,7 @@
 	if (isset($_SESSION["signed-in"]))
 	{
 		//redirect to the main page
-		header( 'goalie.php' ) ;
+		header( 'Location: goalie.php' ) ;
 	}
 
     
@@ -35,18 +35,18 @@
 			<div class="col-all-12">
 				<div class="sign-in">
 					<h1>Goalie Sign In</h1>
-					<form class="form-horizontal" action="<?php $_SESSION["signed-in"]=true; ?>goalie.php">
+					<form class="form-horizontal" method="post" action="<?php $_SESSION["signed-in"]=true; ?>goalie.php">
 						<fieldset>
 							<div class="form-group">
 								<label for="inputEmail" class="col-lg-2 control-label">Email</label>
 								<div class="col-lg-10">
-									<input name="email" type="text" class="form-control" id="inputEmail" placeholder="Email">
+									<input name="email" name="email" type="text" class="form-control" id="inputEmail" placeholder="Email">
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="inputPassword" class="col-lg-2 control-label">Password</label>
 								<div class="col-lg-10">
-									<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+									<input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
 								</div>
 							</div>
 							<button type="submit" class="btn btn-primary">Submit</button>

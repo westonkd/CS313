@@ -4,8 +4,8 @@ session_start();
 	//if the user is already signed in
 if (!isset($_SESSION["signed-in"]))
 {
-		//redirect to the main page
-	header( 'goalie-signin.php' ) ;
+	//redirect to the main page
+	header( 'Location: /goalie-signin.php' ) ;
 } else {
 
 	require("dbConnector.php");
@@ -79,10 +79,7 @@ if (!isset($_SESSION["signed-in"]))
 					<a href="#" class="btn btn-success update-status">Update Progress</a>
 
 					<?php 
-					foreach ($db->query("SELECT first_name FROM user WHERE email='wdrans@gmail.com'") as $row)
-					{
-						echo "<h1>" . $row['first_name'] . "</h1>";
-					}
+						echo "<h1>" . $_POST['email'] . "</h1>";
 					?>
 				</div>
 			</div>
