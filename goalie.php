@@ -12,7 +12,7 @@ if (!isset($_SESSION["signed-in"]))
 	$db = loadDatabase();
 
 	//get the current user
-	$userQuery = "SELECT first_name, last_name FROM user WHERE email=" . $_POST['email'];
+	$userQuery = "SELECT first_name, last_name FROM user WHERE email='" . $_POST['email']."'";
 	$currentUser = $db->query($userQuery);
 }
 
