@@ -7,9 +7,12 @@ if (!isset($_SESSION["signed-in"]))
 	//redirect to the main page
 	header( 'Location: /goalie-signin.php' ) ;
 } else {
-
+	//connect to the DB
 	require("dbConnector.php");
 	$db = loadDatabase();
+
+	//get the current user
+	$db->query("SELECT first_name, last_name FROM user WITH email=$_POST['email']") as $curretUser;
 }
 
 ?>
@@ -49,7 +52,7 @@ if (!isset($_SESSION["signed-in"]))
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="goalie-new-goal.php">Set a New Goal</a></li>
-					<li><a href="goalie-settings.php">Weston's Settings</a></li>
+					<li><a href="goalie-settings.php"><?php echo $curretUser['first_name'] ?>'s Settings</a></li>
 					<li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">Logout</a></li>
 				</ul>
 
@@ -77,10 +80,6 @@ if (!isset($_SESSION["signed-in"]))
 					<p>75 %</p>
 
 					<a href="#" class="btn btn-success update-status">Update Progress</a>
-
-					<?php 
-						echo "<h1>" . $_POST['email'] . "</h1>";
-					?>
 				</div>
 			</div>
 		</section>	
