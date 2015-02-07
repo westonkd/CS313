@@ -1,8 +1,16 @@
 <?php  
+session_start();
+
+	//if the user is already signed in
+if (!isset($_SESSION["signed-in"]))
+{
+		//redirect to the main page
+	header( 'goalie-signin.php' ) ;
+} else {
+
 	require("dbConnector.php");
 	$db = loadDatabase();
-
-	//user's name variable
+}
 
 ?>
 <!DOCTYPE html>

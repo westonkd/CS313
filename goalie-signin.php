@@ -1,6 +1,13 @@
 <?php  
 	session_start();
 
+	//if the user is already signed in
+	if (isset($_SESSION["signed-in"]))
+	{
+		//redirect to the main page
+		header( 'goalie.php' ) ;
+	}
+
     
 ?>
 <!DOCTYPE html>
@@ -28,7 +35,7 @@
 			<div class="col-all-12">
 				<div class="sign-in">
 					<h1>Goalie Sign In</h1>
-					<form class="form-horizontal" action="goalie.php">
+					<form class="form-horizontal" action="<?php $_SESSION["signed-in"]=true; ?>goalie.php">
 						<fieldset>
 							<div class="form-group">
 								<label for="inputEmail" class="col-lg-2 control-label">Email</label>
