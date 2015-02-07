@@ -53,14 +53,14 @@ if (!isset($_SESSION["signed-in"]))
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="goalie-new-goal.php">Set a New Goal</a></li>
-					<li><a href="goalie-settings.php"><?php //echo $curretUser['first_name'] ?>'s Settings</a></li>
+					<li><a href="goalie-settings.php"><?php echo $curretUser[0]['first_name'] ?>'s Settings</a></li>
 					<li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">Logout</a></li>
 				</ul>
 
 			</div>
 		</div>
 	</div>
-	<?php echo $currenUser; ?>
+
 	<!--main content-->
 	<main class="container">
 		<section class="row">
