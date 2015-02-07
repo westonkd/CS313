@@ -1,6 +1,9 @@
 <?php  
-require("dbConnector.php");
-$db = loadDatabase();
+	require("dbConnector.php");
+	$db = loadDatabase();
+
+	//user's name variable
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,7 +71,7 @@ $db = loadDatabase();
 					<a href="#" class="btn btn-success update-status">Update Progress</a>
 
 					<?php 
-					foreach ($db->query("SELECT first_name FROM user") as $row)
+					foreach ($db->query("SELECT first_name FROM user WHERE email='wdrans@gmail.com'") as $row)
 					{
 						echo "<h1>" . $row['first_name'] . "</h1>";
 					}
