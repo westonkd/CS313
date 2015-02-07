@@ -90,7 +90,10 @@ if (!isset($_SESSION["signed-in"]))
 
 					<a href="#" class="btn btn-success update-status">Update Progress</a>
 
-					<?php echo "currentgoal" $currentGoal['title']; ?>
+					<?php echo "currentgoal" $currentGoal['title']; 
+					echo "test: ". $stmt;
+					echo "test2: ".$currentGoal;?>
+
 				</div>
 			</div>
 		</section>	
