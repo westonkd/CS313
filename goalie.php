@@ -19,7 +19,7 @@ if (!isset($_SESSION["signed-in"]))
 	$user = $stmt->fetch();
 
 	//get the current goal
-	$stmt = $db->prepare("SELECT * FROM goal g JOIN user u ON g.id = u.id WHERE email=:email");
+	$stmt = $db->prepare("SELECT * FROM goal INNER JOIN user ON goal.user_id = user.id WHERE email=:email");
 	$stmt->execute(array(':email' => $_SESSION['email']));
 	$currentGoal = $stmt->fetch();
 }
