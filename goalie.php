@@ -1,4 +1,9 @@
-<?php  ?>
+<?php  
+	$dbHost = getenv('OPENSHIFT_MYSQL_DB_HOST');
+$dbPort = getenv('OPENSHIFT_MYSQL_DB_PORT');
+$dbUser = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+$dbPassword = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +26,7 @@
 	<script src="assets/Chart.min.js"></script>
 </head>
 <body>
+	<h1><?php echo "host:$dbHost:$dbPort dbName:$dbName user:$dbUser password:$dbPassword" ?></h1>
 	<!--Navigation-->
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
