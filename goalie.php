@@ -2,8 +2,7 @@
 session_start();
 
 	//if the user is already signed in
-if (!isset($_SESSION["signed-in"]))
-{
+if (!isset($_SESSION["signed-in"])) {
 	//redirect to the main page
 	header( 'Location: /goalie-signin.php' ) ;
 } else {
@@ -11,7 +10,9 @@ if (!isset($_SESSION["signed-in"]))
 	require("dbConnector.php");
 	$db = loadDatabase();
 
-	$_SESSION['email'] = $_POST['email'];
+	if (!isset($_SESSION['email'])) {
+		$_SESSION['email'] = $_POST['email'];
+	}
 
 	//get the current user
 	$stmt = $db->prepare("SELECT * FROM user WHERE email=:email ");
@@ -24,7 +25,7 @@ if (!isset($_SESSION["signed-in"]))
 	$currentGoal = $stmt->fetch();
 
 	//get goalhistory
-	$stmt = $db->prepare("SELECT * FROM user WHERE email=:email AND is_current_goal=0");
+	$stmt = $db->prepare("SELECT * FROM goal INNER JOIN user ON goal.user_id = user.id WHERE email=:email AND is_current_goal=0");
 	$stmt->execute(array(':email' => $_SESSION['email']));
 	$oldGoals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
