@@ -117,7 +117,7 @@ if (!isset($_SESSION["signed-in"])) {
 							<?php 
 							foreach ($oldGoals as $row)
 							{
-								echo "<tr><td>".$row['title']."</td><td>".$row['date_set']."</td><td>".$row['date_to_finish']."</td><td>".$row['percent_complete']."</td></tr>";
+								echo "<tr><td>".$row['title']."</td><td>".$row['date_set']."</td><td>".$row['date_to_finish']."</td><td>".$row['percent_complete']."%</td></tr>";
 							}
 							?>
 						</tbody>
