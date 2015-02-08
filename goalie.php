@@ -22,6 +22,11 @@ if (!isset($_SESSION["signed-in"]))
 	$stmt = $db->prepare("SELECT * FROM goal INNER JOIN user ON goal.user_id = user.id WHERE email=:email AND is_current_goal=1");
 	$stmt->execute(array(':email' => $_SESSION['email']));
 	$currentGoal = $stmt->fetch();
+
+	//get goalhistory
+	$stmt = $db->prepare("SELECT * FROM user WHERE email=:email AND is_current_goal=0");
+	$stmt->execute(array(':email' => $_SESSION['email']));
+	$oldGoals = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 ?>
@@ -108,18 +113,12 @@ if (!isset($_SESSION["signed-in"]))
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Column content</td>
-								<td>Column content</td>
-								<td>Column content</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Column content</td>
-								<td>Column content</td>
-								<td>Column content</td>
-							</tr>
+							<?php 
+							foreach ($oldGoals as $row)
+							{
+								echo "<tr><td>".$row['title']."</td><td>".$row['date_set']."</td><td>".$row['date_to_finish']."</td><td>".$row['percent_complete']."</td></tr>";
+							}
+							?>
 						</tbody>
 					</table> 
 				</div>
