@@ -35,12 +35,15 @@ session_start();
 			<div class="col-all-12">
 				<div class="sign-in">
 					<h1>Goalie Sign In</h1>
+					<p>
+						<strong>Note:</strong> for testing purposes please use 'wdrans@gmail.com' as the log in email. Use any value for the password.
+					</p>
 					<form class="form-horizontal" method="post" action="<?php $_SESSION["signed-in"]=true; ?>goalie.php">
 						<fieldset>
 							<div class="form-group">
 								<label for="inputEmail" class="col-lg-2 control-label">Email</label>
 								<div class="col-lg-10">
-									<input name="email" name="email" type="text" class="form-control" id="inputEmail" placeholder="Email">
+									<input name="email" name="email" type="text" class="form-control" id="inputEmail" placeholder="Please use 'wdrans@gmail.com' for testing.">
 								</div>
 							</div>
 							<div class="form-group">
