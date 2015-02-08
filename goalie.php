@@ -4,7 +4,7 @@ session_start();
 	//if the user is already signed in
 if (!isset($_SESSION["signed-in"])) {
 	//redirect to the main page
-	header( 'Location: /goalie-signin.php' ) ;
+	header( 'Location: /goalie-signin.php' );
 } else {
 	//connect to the DB
 	require("dbConnector.php");
@@ -68,7 +68,7 @@ if (!isset($_SESSION["signed-in"])) {
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="goalie-new-goal.php">Set a New Goal</a></li>
 					<li><a href="goalie-settings.php"><?php echo $user['first_name'] ?>'s Settings</a></li>
-					<li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">Logout</a></li>
+					<li><a href="/logout.php">Logout</a></li>
 				</ul>
 
 			</div>

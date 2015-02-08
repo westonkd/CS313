@@ -34,7 +34,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="goalie.php">Current Goal</a></li>
 					<li><a href="goalie-new-goal.php">Set a New Goal</a></li>
-					<li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">Logout</a></li>
+					<li><a href="/logout.php">Logout</a></li>
 				</ul>
 
 			</div>
