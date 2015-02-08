@@ -1,4 +1,4 @@
-<?php  
+<?php 
 session_start();
 
 	//if the user is already signed in

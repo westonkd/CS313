@@ -1,5 +1,5 @@
 <?php  
-	session_start();
+session_start();
 
 	//if the user is already signed in
 	if (isset($_SESSION["signed-in"]))
