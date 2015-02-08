@@ -72,7 +72,7 @@ if (!isset($_SESSION["signed-in"]))
 									<p>Note that the goal due date will be set for one week from the current date.</p>
 									<p><strong>Warining:</strong> Setting a new goal will override your current goal.</p>
 									<button type="submit" class="btn btn-primary">Set Goal</button>
-									<button type="reset" class="btn btn-default">Cancel</button>
+									<a href="goalie.php"><button type="reset" class="btn btn-default">Cancel</button></a>
 								</div>
 							</div>
 							
