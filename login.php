@@ -22,6 +22,7 @@ if (isset($_SESSION["signed-in"])) {
 	$user = $stmt->fetch();
 
 	echo $attemptEmail;
+	echo "test";
 
 	//check if the email is in the database
 	if ($user){
