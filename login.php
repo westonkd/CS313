@@ -23,12 +23,15 @@ if (isset($_SESSION["signed-in"])) {
 
 	//check if the email is in the database
 	if ($user){
-		echo $user['password'];
-		echo $attemptPass;
+		if ($attemptPass == $user['password'])
+		{
+			$_SESSION['email'] = $_POST['email'];
+			$_SESSION['signed-in'] = true;
+			header( 'Location: /goalie.php' );
+		}
 	} else {
 		//email not found
-		echo "not found";
-		echo $user;
+		header( 'Location: /signin.php' );
 	}
 
 }
