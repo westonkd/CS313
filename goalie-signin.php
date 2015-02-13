@@ -7,8 +7,6 @@ session_start();
 		//redirect to the main page
 		header( 'Location: goalie.php' ) ;
 	}
-
-    
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,7 +36,7 @@ session_start();
 					<p>
 						<strong>Note:</strong> for testing purposes please use 'wdrans@gmail.com' as the log in email. Use any value for the password.
 					</p>
-					<form class="form-horizontal" method="post" action="<?php $_SESSION["signed-in"]=true; ?>goalie.php">
+					<form class="form-horizontal" method="post" action="login.php">
 						<fieldset>
 							<div class="form-group">
 								<label for="inputEmail" class="col-lg-2 control-label">Email</label>
@@ -53,7 +51,7 @@ session_start();
 								</div>
 							</div>
 							<button type="submit" class="btn btn-primary">Submit</button>
-							<!-- <button id="create-account" class="btn btn-default">Create an Account</button> -->
+							<button id="create-account" class="btn btn-default">Create an Account</button>
 						</fieldset>
 					</form>
 				</div>
