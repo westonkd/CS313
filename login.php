@@ -13,13 +13,13 @@ if (isset($_SESSION["signed-in"])) {
 	// 	$_SESSION['email'] = $_POST['email'];
 	// }
 
-	//get the current user
-	$stmt = $db->prepare("SELECT * FROM user WHERE email=:email ");
-	$stmt->execute(array(':email' => $_SESSION['email']));
-	$user = $stmt->fetch();
-
 	$attemptEmail = $_POST['email'];
 	$attemptPass = $_POST['password'];
+
+	//get the current user
+	$stmt = $db->prepare("SELECT * FROM user WHERE email=:email ");
+	$stmt->execute(array(':email' => $attemptEmail));
+	$user = $stmt->fetch();
 
 	//check if the email is in the database
 	if ($user){
