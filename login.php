@@ -28,6 +28,7 @@ if (isset($_SESSION["signed-in"])) {
 	} else {
 		//email not found
 		echo "not found";
+		echo $user;
 	}
 
 }
