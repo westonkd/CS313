@@ -27,6 +27,7 @@ if (isset($_SESSION["signed-in"])) {
 		echo $attemptPass;
 	} else {
 		//email not found
+		echo "not found";
 	}
 
 }
