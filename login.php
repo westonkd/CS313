@@ -22,12 +22,9 @@ if (isset($_SESSION["signed-in"])) {
 	$attemptPass = $_POST['password'];
 
 	//check if the email is in the database
-	if($user){
-		$user['password']
-		//if the password is correct
-		if($attemptPass == $user['password']) {
-			echo $user['password']
-		}
+	if ($user){
+		echo $user['password'];
+		echo $attemptPass;
 	} else {
 		//email not found
 	}
