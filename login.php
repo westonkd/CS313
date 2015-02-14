@@ -23,10 +23,10 @@ if (isset($_SESSION["signed-in"])) {
 
 	echo $attemptEmail;
 	echo $user['password'];
-	echo "test";
 
 	//check if the email is in the database
-	// if ($user){
+	if ($user){
+		echo "There is a user!";
 	// 	if ($attemptPass == $user['password'])
 	// 	{
 	// 		$_SESSION['email'] = $_POST['email'];
@@ -39,7 +39,7 @@ if (isset($_SESSION["signed-in"])) {
 	// 	//email not found
 	// 	header( 'Location: /signin.php' );
 	// 	echo "not in :/";
-	// }
+	}
 
 }
 
