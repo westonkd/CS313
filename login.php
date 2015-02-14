@@ -21,9 +21,6 @@ if (isset($_SESSION["signed-in"])) {
 	$stmt->execute(array(':email' => $attemptEmail));
 	$user = $stmt->fetch();
 
-	echo $attemptEmail;
-	echo $user['password'];
-
 	//check if the email is in the database
 	if ($user){
 		echo "There is a user!";
@@ -34,14 +31,13 @@ if (isset($_SESSION["signed-in"])) {
 			$_SESSION['signed-in'] = true;
 
 			echo "in";
-			//header( 'Location: /goalie.php' );
+			header( 'Location: /goalie.php' );
 		}
-	// } else {
-	// 	//email not found
-	// 	header( 'Location: /signin.php' );
-	// 	echo "not in :/";
+	} else {
+		//email not found
+		header( 'Location: /signin.php' );
+		echo "not in :/";
 	}
-
 }
 
 
