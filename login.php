@@ -27,14 +27,14 @@ if (isset($_SESSION["signed-in"])) {
 	//check if the email is in the database
 	if ($user){
 		echo "There is a user!";
-	// 	if ($attemptPass == $user['password'])
-	// 	{
-	// 		$_SESSION['email'] = $_POST['email'];
-	// 		$_SESSION['signed-in'] = true;
+		if ($attemptPass == $user['password'])
+		{
+			$_SESSION['email'] = $_POST['email'];
+			$_SESSION['signed-in'] = true;
 
-	// 		header( 'Location: /goalie.php' );
-	// 		echo "in!";
-	// 	}
+			echo "in";
+			//header( 'Location: /goalie.php' );
+		}
 	// } else {
 	// 	//email not found
 	// 	header( 'Location: /signin.php' );
