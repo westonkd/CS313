@@ -21,16 +21,14 @@ if (!$password == $rePassword)
 $date = date('Y-m-d H:i:s');
 
 //insert the new user
-$statement = $db->prepare('INSERT INTO user(first_name, last_name, email, password, last_visited) VALUES(:first, :last, :email, :password, :lastVisit)');
+$statement = $db->prepare('INSERT INTO user(first_name, last_name, email, password, last_visited) VALUES(:first, :last, :email, :password)');
 
 $statement->bindParam(':first', $firstName);
 $statement->bindParam(':last', $lastName);
 $statement->bindParam(':email', $email);
 $statement->bindParam(':password', $password);
-$statement->bindParam(':lastVisit', $date);
+//$statement->bindParam(':lastVisit', $date);
 $statement->execute();
 
 echo "Success";
-
-echo "working";
 ?>
