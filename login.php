@@ -9,12 +9,14 @@ if (isset($_SESSION["signed-in"])) {
 	require("dbConnector.php");
 	$db = loadDatabase();
 
+	$attemptEmail = $_POST['email'];
+	$attemptPass = $_POST['password'];
+
 	//get the current user
 	$stmt = $db->prepare("SELECT * FROM user WHERE email=:email ");
 	$stmt->execute(array(':email' => $attemptEmail));
 	$user = $stmt->fetch();
 
-	echo "testing\n";
 
 	//check if the email is in the database
 	if ($user){
