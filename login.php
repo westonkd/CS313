@@ -29,6 +29,6 @@ if (isset($_SESSION["signed-in"])) {
 	} 
 		
 	//email not found or password incorrect
-	header( 'Location: /signin.php' );
+	header( 'Location: /logout.php' );
 }
 ?>
