@@ -23,17 +23,11 @@ if (isset($_SESSION["signed-in"])) {
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['signed-in'] = true;
 
-			echo "in";
 			header( 'Location: /goalie.php' );
-		} else {
-			//email not found or password incorrect
-			header( 'Location: /logout.php' );
-		}
-	} else {
-		//email not found or password incorrect
-		header( 'Location: /logout.php' );
-	}
-	
-	
+		} 
+	} 
+		
+	//email not found or password incorrect
+	header( 'Location: /goalie-signin.php' );
 }
 ?>
