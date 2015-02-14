@@ -62,7 +62,7 @@ session_start();
 		<div class="modal fade" id="create-account-modal">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<form action="">
+					<form action="create-account.php">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 							<h4 class="modal-title">Creat Account</h4>
@@ -89,7 +89,7 @@ session_start();
 						</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary">Create Account</button>
-							<a href="#" class="btn btn-info">Cancel</a>
+							<button type="cancel" class="btn btn-info">Cancel</a>
 						</div>
 					</form>
 				</div>
