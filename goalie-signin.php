@@ -69,23 +69,23 @@ session_start();
 						</div>
 						<div class="modal-body">
 							<label for="first-name" class="control-label">First Name</label>
-							<input id="first-name" type="text" class="form-control" placeholder="First Name">
+							<input id="first-name" type="text" name="firstName" class="form-control" placeholder="First Name">
 
 							<label for="last-name" class="control-label">Last Name</label>
-							<input id="last-name" type="text" class="form-control" placeholder="Last Name">
+							<input id="last-name" type="text" name="lastName" class="form-control" placeholder="Last Name">
 
 							<br>
 
 							<label for="email" class="control-label">Email Address</label>
-							<input id="email" type="text" class="form-control" placeholder="Email">
+							<input id="email" type="text" name="email" class="form-control" placeholder="Email">
 
 							<br>
 
 							<label for="password" class="control-label">Password</label>
-							<input id="password" type="text" class="form-control" placeholder="Password">
+							<input id="password" type="text" name="password" class="form-control" placeholder="Password">
 
 							<label for="reenter" class="control-label">Re-enter Password</label>
-							<input id="reenter" type="text" class="form-control" placeholder="Password">
+							<input id="reenter" type="text" name="reenter" class="form-control" placeholder="Password">
 						</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary">Create Account</button>
