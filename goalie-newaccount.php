@@ -28,7 +28,7 @@ $statement->bindParam(':last', $lastName);
 $statement->bindParam(':email', $email);
 $statement->bindParam(':password', $password);
 //$statement->bindParam(':lastVisit', $date);
-$statement->execute();
+$wasSuccesful = $statement->execute();
 
-echo "Success";
+echo $wasSuccesful;
 ?>
