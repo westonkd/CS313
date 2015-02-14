@@ -82,10 +82,10 @@ session_start();
 							<br>
 
 							<label for="password" class="control-label">Password</label>
-							<input id="password" type="text" name="password" class="form-control" placeholder="Password">
+							<input id="password" type="password" name="password" class="form-control" placeholder="Password">
 
 							<label for="reenter" class="control-label">Re-enter Password</label>
-							<input id="reenter" type="text" name="reenter" class="form-control" placeholder="Password">
+							<input id="reenter" type="password" name="reenter" class="form-control" placeholder="Password">
 						</div>
 						<div class="modal-footer">
 							<button type="submit" class="btn btn-primary">Create Account</button>
