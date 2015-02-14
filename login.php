@@ -26,7 +26,7 @@ if (isset($_SESSION["signed-in"])) {
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['signed-in'] = true;
 
-			header( 'Location: /goalie.php' );
+			header( 'Location: /goalie.php');
 		} 
 	} 
 
