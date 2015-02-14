@@ -40,7 +40,7 @@ $wasSuccesful = $statement->execute();
 $userID = $db->lastInsertId();
 
 //create a default goal
-$goalStatement = $db->prepare('INSERT INTO goal(title, description, date_set, date_to_finish, percent_complete, last_updated, is_current_goal, user_id) 
+$goalStatement  = $db->prepare('INSERT INTO goal(title, description, date_set, date_to_finish, percent_complete, last_updated, is_current_goal, user_id) 
 										VALUES(:title, :desciption, :date-set, :date-finish, :percent, :updated, :isCurrent, :user)');
 
 $goalStatement->bindParam(':title', 'No Goal Set');
