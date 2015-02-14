@@ -17,6 +17,12 @@ if (!$password == $rePassword)
 	header('Location: goalie-signin.php');
 }
 
+echo "working";
+
+$statement = $db->prepare('INSERT INTO preferences(back_color, for_color) VALUES (1,2)');
+$test = $statement->execute();
+echo $test;
+
 //current date
 $date = date('Y-m-d H:i:s');
 
@@ -29,6 +35,8 @@ $statement->bindParam(':email', $email);
 $statement->bindParam(':password', $password);
 //$statement->bindParam(':lastVisit', $date);
 $wasSuccesful = $statement->execute();
+
+
 
 echo $wasSuccesful;
 ?>
