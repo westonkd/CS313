@@ -26,8 +26,6 @@ $statementID = $db->lastInsertId();
 //current date
 $date = date('Y-m-d H:i:s');
 
-echo $date;
-
 //insert the new user
 $statement = $db->prepare('INSERT INTO user(first_name, last_name, email, password, last_visited, pref_id) VALUES(:first, :last, :email, :password, :dateVisit, :pref)');
 
@@ -39,7 +37,10 @@ $statement->bindParam(':dateVisit', $date);
 $statement->bindParam(':pref', $statementID);
 $wasSuccesful = $statement->execute();
 
+$userID = $db->lastInsertId();
 
+//create a default goal
+$statement = $db->prepare("INSERT INTO goal(title, description, date_set, date_to_finish, percent_complete, last_updated, is_current_goal, user_id) VALUES('No goal set yet', 'Click set a new goal to get started', $date, $date, 0, $date, 1, $userID)");
+$statement->execute();
 
-echo $wasSuccesful;
 ?>
