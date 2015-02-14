@@ -52,6 +52,6 @@ $goalStatement->bindParam(':updated', $date);
 $goalStatement->bindParam(':isCurrent', 1);
 $goalStatement->bindParam(':user', $userID);
 
-$goalStatement->execute();
+echo "test:" . $goalStatement->execute();
 
 ?>
