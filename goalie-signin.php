@@ -51,7 +51,7 @@ session_start();
 								</div>
 							</div>
 							<button type="submit" class="btn btn-primary">Submit</button>
-							<button id="create-account" class="btn btn-default">Create an Account</button>
+							<button id="create-account" onclick="return false;" class="btn btn-default">Create an Account</button>
 						</fieldset>
 					</form>
 				</div>
