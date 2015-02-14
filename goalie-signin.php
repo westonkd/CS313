@@ -1,12 +1,12 @@
 <?php  
 session_start();
 
-	// //if the user is already signed in
-	// if (isset($_SESSION["signed-in"]))
-	// {
-	// 	//redirect to the main page
-	// 	header( 'Location: goalie.php' ) ;
-	// }
+	//if the user is already signed in
+	if (isset($_SESSION["signed-in"]))
+	{
+		//redirect to the main page
+		header( 'Location: goalie.php' ) ;
+	}
 ?>
 <!DOCTYPE html>
 <html>
