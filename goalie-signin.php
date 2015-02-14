@@ -62,7 +62,7 @@ session_start();
 		<div class="modal fade" id="create-account-modal">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<form action="goalie-newaccount.php">
+					<form action="goalie-newaccount.php" method="post">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 							<h4 class="modal-title">Creat Account</h4>
