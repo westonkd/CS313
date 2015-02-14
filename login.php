@@ -25,10 +25,15 @@ if (isset($_SESSION["signed-in"])) {
 
 			echo "in";
 			header( 'Location: /goalie.php' );
+		} else {
+			//email not found or password incorrect
+			header( 'Location: /logout.php' );
 		}
-	} 
-		
-	//email not found or password incorrect
-	header( 'Location: /logout.php' );
+	} else {
+		//email not found or password incorrect
+		header( 'Location: /logout.php' );
+	}
+	
+	
 }
 ?>
