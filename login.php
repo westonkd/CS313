@@ -9,13 +9,6 @@ if (isset($_SESSION["signed-in"])) {
 	require("dbConnector.php");
 	$db = loadDatabase();
 
-	// if (!isset($_SESSION['email'])) {
-	// 	$_SESSION['email'] = $_POST['email'];
-	// }
-
-	$attemptEmail = $_POST['email'];
-	$attemptPass = $_POST['password'];
-
 	//get the current user
 	$stmt = $db->prepare("SELECT * FROM user WHERE email=:email ");
 	$stmt->execute(array(':email' => $attemptEmail));
@@ -33,15 +26,9 @@ if (isset($_SESSION["signed-in"])) {
 			echo "in";
 			header( 'Location: /goalie.php' );
 		}
-	} else {
-		//email not found
-		header( 'Location: /signin.php' );
-		echo "not in :/";
-	}
+	} 
+		
+	//email not found or password incorrect
+	header( 'Location: /signin.php' );
 }
-
-
-
-
-
 ?>
