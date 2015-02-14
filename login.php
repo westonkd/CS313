@@ -27,6 +27,7 @@ if (isset($_SESSION["signed-in"])) {
 	//check if the email is in the database
 	if ($user){
 		echo "There is a user!";
+		echo "\nComparing: ". $attemptPass . "with " . $user['password'];
 		if ($attemptPass == $user['password'])
 		{
 			$_SESSION['email'] = $_POST['email'];
