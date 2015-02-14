@@ -22,22 +22,24 @@ if (isset($_SESSION["signed-in"])) {
 	$user = $stmt->fetch();
 
 	echo $attemptEmail;
+	echo $user['password'];
 	echo "test";
 
 	//check if the email is in the database
-	if ($user){
-		if ($attemptPass == $user['password'])
-		{
-			$_SESSION['email'] = $_POST['email'];
-			$_SESSION['signed-in'] = true;
-			header( 'Location: /goalie.php' );
-			echo "in!";
-		}
-	} else {
-		//email not found
-		header( 'Location: /signin.php' );
-		echo "not in :/";
-	}
+	// if ($user){
+	// 	if ($attemptPass == $user['password'])
+	// 	{
+	// 		$_SESSION['email'] = $_POST['email'];
+	// 		$_SESSION['signed-in'] = true;
+
+	// 		header( 'Location: /goalie.php' );
+	// 		echo "in!";
+	// 	}
+	// } else {
+	// 	//email not found
+	// 	header( 'Location: /signin.php' );
+	// 	echo "not in :/";
+	// }
 
 }
 
