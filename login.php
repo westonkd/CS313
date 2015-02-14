@@ -27,8 +27,6 @@ if (isset($_SESSION["signed-in"])) {
 		} 
 	} 
 		
-	//email not found or password incorrect
-	//header( 'Location: /goalie-signin.php' );
-	echo "nothing!";
+	
 }
 ?>
