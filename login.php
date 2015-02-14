@@ -14,6 +14,8 @@ if (isset($_SESSION["signed-in"])) {
 	$stmt->execute(array(':email' => $attemptEmail));
 	$user = $stmt->fetch();
 
+	echo "testing\n";
+
 	//check if the email is in the database
 	if ($user){
 		echo "There is a user!";
