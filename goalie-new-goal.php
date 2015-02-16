@@ -53,7 +53,7 @@ if (!isset($_SESSION["signed-in"]))
 		<section class="row">
 			<div class="col-all-12">
 				<div class="sign-in well">
-					<form action="">
+					<form action="goalie-creategoal.php" method="post">
 						<fieldset>
 							<div class="form-group">
 								<label for="goal-name" class="col-lg-2 control-label">Goal Name</label>
