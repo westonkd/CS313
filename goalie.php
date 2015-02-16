@@ -77,18 +77,19 @@ if (!isset($_SESSION["signed-in"])) {
 
 	<!--main content-->
 	<main class="container">
-		<?php 
-			if (!$currentGoal) {
-				echo "<h1>No Goal Set</h1>";
-			}
-		 ?>
 		<section class="row">
-			<div class="col-md-6">
+			<?php 
+				if (!$currentGoal) {
+					echo "<div class='col-all-12'><h2>No goal set</h2><h4>Click 'Set a New Goal' to get started.</h4></div>";
+					echo "<style type='text/css'>.current{display:none !important;}</style>";
+				}
+		 	?>
+			<div class="col-md-6 current">
 				<div id="goal-container">
 					<canvas id="goal-progress" width="375" height="375"></canvas>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6 current">
 				<div id="current-goal-info">
 					<h2><?php echo $currentGoal['title']; ?></h2>
 					<p><?php echo $currentGoal['description']; ?></p>
