@@ -78,7 +78,7 @@ if (!isset($_SESSION["signed-in"])) {
 	<!--main content-->
 	<main class="container">
 		<?php 
-			if ($currentGoal) {
+			if (!$currentGoal) {
 				echo "<h1>No Goal Set</h1>";
 			}
 		 ?>
