@@ -22,6 +22,9 @@ $stmt->execute(array(':email' => $_SESSION['email']));
 $currentGoal = $stmt->fetch();
 $currentGoal['is_current_goal'] = 0;
 
+echo "current goal: ". $currentGoal."\n";
+echo "is current: ".$currentGoal['is_current_goal'];
+
 
 
 //current date
