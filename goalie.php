@@ -80,7 +80,7 @@ if (!isset($_SESSION["signed-in"])) {
 		<section class="row">
 			<?php 
 				if (!$currentGoal) {
-					echo "<div class='col-all-12'><h2>No goal set</h2><h4>Click 'Set a New Goal' to get started.</h4></div>";
+					echo "<div id="goal-container"><div class='col-all-12'><h2>No goal set</h2><h4>Click 'Set a New Goal' to get started.</h4></div></div>";
 					echo "<style type='text/css'>.current{display:none !important;}</style>";
 				}
 		 	?>
