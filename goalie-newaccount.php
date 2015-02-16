@@ -36,4 +36,7 @@ $statement->bindParam(':password', $password);
 $statement->bindParam(':dateVisit', $date);
 $statement->bindParam(':pref', $statementID);
 $wasSuccesful = $statement->execute();
+
+header('Location: goalie-signin.php');
+
 ?>
