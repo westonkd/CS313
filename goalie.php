@@ -77,6 +77,11 @@ if (!isset($_SESSION["signed-in"])) {
 
 	<!--main content-->
 	<main class="container">
+		<?php 
+			if ($currentGoal) {
+				echo "<h1>No Goal Set</h1>";
+			}
+		 ?>
 		<section class="row">
 			<div class="col-md-6">
 				<div id="goal-container">
