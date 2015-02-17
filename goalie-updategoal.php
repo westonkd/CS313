@@ -19,8 +19,8 @@ if (isset($_SESSION['email']) && !empty($_POST['days-completed'])) {
     }
 
     //update the days completed on
-    $stmt = $db->prepare("UPDATE goal INNER JOIN user ON goal.user_id = user.id SET goal.days_complete = $newDaysSet WHERE email=:email AND is_current_goal=1");
-	$stmt->execute(array(':email' => $_SESSION['email']));
+    $stmt = $db->prepare("UPDATE goal INNER JOIN user ON goal.user_id = user.id SET goal.days_complete = :newDate WHERE email=:email AND is_current_goal=1");
+	$stmt->execute(array(':email' => $_SESSION['email'], ':newDate' => $newDaysSet));
 
     echo $newDaysSet."\n";
 	echo "in: ".$currentGoal['days_complete'];
