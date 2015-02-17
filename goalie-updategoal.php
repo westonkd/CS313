@@ -1,5 +1,7 @@
 <?php 
-	session_start();
+session_start();
+
+if (isset($_SESSION['email'])) {
 
 	//move the current goal to history
 	$stmt = $db->prepare("UPDATE goal INNER JOIN user ON goal.user_id = user.id WHERE email=:email AND is_current_goal=1");
@@ -8,4 +10,5 @@
 
 
 	echo $currentGoal['days_complete'];
- ?>
+}
+?>

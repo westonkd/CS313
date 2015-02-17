@@ -142,7 +142,7 @@ if (!isset($_SESSION["signed-in"])) {
 						<h4 class="modal-title">Update Goal Status</h4>
 					</div>
 					<div class="modal-body">
-						<form action="goalie-updategoal.php" method="postf">
+						<form action="goalie-updategoal.php" method="post">
 							<p><strong>Which days did you meet your goal on?</strong></p>
 
 							<div class="checkbox">
