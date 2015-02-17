@@ -147,7 +147,7 @@ if (!isset($_SESSION["signed-in"])) {
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="0"> Monday
+									<input type="checkbox" name="days-completed[]" value="0" <?php if (currentGoal['days_complete'][0] == "1"){echo "checked";} ?>> Monday
 								</label>
 							</div>
 
