@@ -240,13 +240,13 @@ if (!isset($_SESSION["signed-in"])) {
 		//goal progress data
 		var goalProgress = [
 		{
-			value: 75,
+			value: <?php echo $currentGoal['percent_complete']; ?>,
 			color:"#3399FF",
 			highlight: "#5CADFF",
 			label: "Goal Progress Percent"
 		},
 		{
-			value: 25,
+			value: <?php echo 100 - ((int) $currentGoal['percent_complete']); ?>,
 			color:"white",
 			highlight: "white",
 			label: ""
