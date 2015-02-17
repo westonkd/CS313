@@ -79,11 +79,11 @@ if (!isset($_SESSION["signed-in"])) {
 	<main class="container">
 		<section class="row">
 			<?php 
-				if (!$currentGoal) {
-					echo "<div id='goal-container'><div class='col-all-12'><h2>No goal set</h2><h4>Click 'Set a New Goal' to get started.</h4></div></div>";
-					echo "<style type='text/css'>.current{display:none !important;}</style>";
-				}
-		 	?>
+			if (!$currentGoal) {
+				echo "<div id='goal-container'><div class='col-all-12'><h2>No goal set</h2><h4>Click 'Set a New Goal' to get started.</h4></div></div>";
+				echo "<style type='text/css'>.current{display:none !important;}</style>";
+			}
+			?>
 			<div class="col-md-6 current">
 				<div id="goal-container">
 					<canvas id="goal-progress" width="375" height="375"></canvas>
@@ -142,50 +142,51 @@ if (!isset($_SESSION["signed-in"])) {
 						<h4 class="modal-title">Update Goal Status</h4>
 					</div>
 					<div class="modal-body">
-						<p><strong>Which days did you meet your goal on?</strong></p>
+						<form action="goalie-updategoal.php" method="post">
+							<p><strong>Which days did you meet your goal on?</strong></p>
 
-						<div class="checkbox">
-							<label>
-								<input type="checkbox"> Monday
-							</label>
-						</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> Monday
+								</label>
+							</div>
 
-						<div class="checkbox">
-							<label>
-								<input type="checkbox"> Tuesday
-							</label>
-						</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> Tuesday
+								</label>
+							</div>
 
-						<div class="checkbox">
-							<label>
-								<input type="checkbox"> Wednesday
-							</label>
-						</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> Wednesday
+								</label>
+							</div>
 
-						<div class="checkbox">
-							<label>
-								<input type="checkbox"> Thursday
-							</label>
-						</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> Thursday
+								</label>
+							</div>
 
-						<div class="checkbox">
-							<label>
-								<input type="checkbox"> Friday
-							</label>
-						</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> Friday
+								</label>
+							</div>
 
-						<div class="checkbox">
-							<label>
-								<input type="checkbox"> Saturday
-							</label>
-						</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> Saturday
+								</label>
+							</div>
 
-						<div class="checkbox">
-							<label>
-								<input type="checkbox"> Sunday
-							</label>
-						</div>
-
+							<div class="checkbox">
+								<label>
+									<input type="checkbox"> Sunday
+								</label>
+							</div>
+						</form>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary">Save Update</button>
