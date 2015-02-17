@@ -41,7 +41,7 @@ session_start();
 							<div class="form-group">
 								<label for="inputEmail" class="col-lg-2 control-label">Email</label>
 								<div class="col-lg-10">
-									<input name="email" name="email" type="text" class="form-control" id="inputEmail" placeholder="Please use 'wdrans@gmail.com' for testing.">
+									<input name="email" name="email" type="text" class="form-control" id="inputEmail" placeholder="Enter your email address">
 								</div>
 							</div>
 							<div class="form-group">
