@@ -72,7 +72,7 @@ if (!isset($_SESSION["signed-in"]))
 									<p>Note that the goal due date will be set for one week from the current date.</p>
 									<p><strong>Caution:</strong> Setting a new goal will mark your current goal as complete and move it to history.</p>
 									<button type="submit" class="btn btn-primary">Set Goal</button>
-									<a href="goalie.php"><button type="reset" class="btn btn-default">Cancel</button></a>
+									<button type="reset" class="btn btn-default" onClick="javascript:location.href = 'http://php-westonkd.rhcloud.com/goalie.php';" />>Cancel</button>
 								</div>
 							</div>
 							

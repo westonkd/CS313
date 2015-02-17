@@ -12,7 +12,7 @@ if (isset($_SESSION['email']) && !empty($_POST['days-completed'])) {
 	$stmt->execute(array(':email' => $_SESSION['email']));
 	$currentGoal = $stmt->fetch();
 
-	//set the days the goal was completed on
+	//simply set the days the goal was completed on
 	$newDaysSet = "0000000";
 	foreach($days as $day) {
         $newDaysSet[(int) $day] = "1";
