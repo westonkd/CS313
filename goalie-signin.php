@@ -34,7 +34,7 @@ session_start();
 				<div class="sign-in">
 					<h1>Goalie Sign In</h1>
 					<p>
-						<strong>Note:</strong> for testing purposes please use 'wdrans@gmail.com' as the log in email. Use any value for the password.
+						<strong>Note:</strong> feel free to create an account for testing purposes. Please not that passwords are not stored securely.
 					</p>
 					<form class="form-horizontal" method="post" action="login.php">
 						<fieldset>
