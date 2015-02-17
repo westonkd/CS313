@@ -20,15 +20,19 @@ $user = $stmt->fetch();
 $stmt = $db->prepare("UPDATE goal INNER JOIN user ON goal.user_id = user.id SET goal.is_current_goal = 0 WHERE email=:email AND is_current_goal=1");
 $stmt->execute(array(':email' => $_SESSION['email']));
 $currentGoal = $stmt->fetch();
-$currentGoal['is_current_goal'] = 0;
-
-echo "current goal: ". $currentGoal."\n";
-echo "is current: ".$currentGoal['is_current_goal'];
-
-
 
 //current date
 $date = date('Y-m-d H:i:s');
+$plusOneWeek = strtotime('+1 Week');
+
+//insert the new goal
+if(isset($_POST['goalName'])) {
+	$statement = $db->prepare("INSERT INTO goal(title, description, date_set, date_to_finish, percent_complete, last_updated, is_current_goal, user_id) VALUES(:title, :description, :date_set, :date_to_finish, :percent_complete, :last_updated, :is_current_goal, :user_id)");
+	$goalWasCreated = $statement->execute(array(':title' => $_POST['goalName'], ':description' => $_POST['goalDescription'], ':date_set' => $date, ':date_to_finish' => $plusOneWeek, ':percent_complete' => 0, ':last_updated' => $date, ':is_current_goal' => 1, ':user_id' => $user[id]));
+	echo "Goal: " . $goalWasCreated;
+}	
+
+
 
 // //insert the new user
 // $statement = $db->prepare('INSERT INTO user(first_name, last_name, email, password, last_visited, pref_id) VALUES(:first, :last, :email, :password, :dateVisit, :pref)');
@@ -41,7 +45,7 @@ $date = date('Y-m-d H:i:s');
 // $statement->bindParam(':pref', $statementID);
 // $wasSuccesful = $statement->execute();
 
-// header('Location: goalie-signin.php');
+//header('Location: goalie-signin.php');
 
 echo $user['id'];
 
