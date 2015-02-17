@@ -147,43 +147,43 @@ if (!isset($_SESSION["signed-in"])) {
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="0" <?php if (currentGoal['days_complete'][0] == "1"){echo "checked";} ?>> Monday
+									<input type="checkbox" name="days-completed[]" value="0" <?php if ($currentGoal['days_complete'][0] == "1"){echo "checked";} ?>> Monday
 								</label>
 							</div>
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="1"> Tuesday
+									<input type="checkbox" name="days-completed[]" value="1" <?php if ($currentGoal['days_complete'][1] == "1"){echo "checked";} ?>> Tuesday
 								</label>
 							</div>
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="2"> Wednesday
+									<input type="checkbox" name="days-completed[]" value="2" <?php if ($currentGoal['days_complete'][2] == "1"){echo "checked";} ?>> Wednesday
 								</label>
 							</div>
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="3"> Thursday
+									<input type="checkbox" name="days-completed[]" value="3" <?php if ($currentGoal['days_complete'][3] == "1"){echo "checked";} ?>> Thursday
 								</label>
 							</div>
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="4"> Friday
+									<input type="checkbox" name="days-completed[]" value="4" <?php if ($currentGoal['days_complete'][4] == "1"){echo "checked";} ?>> Friday
 								</label>
 							</div>
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="5"> Saturday
+									<input type="checkbox" name="days-completed[]" value="5" <?php if ($currentGoal['days_complete'][5] == "1"){echo "checked";} ?>> Saturday
 								</label>
 							</div>
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="6"> Sunday
+									<input type="checkbox" name="days-completed[]" value="6" <?php if ($currentGoal['days_complete'][6] == "1"){echo "checked";} ?>> Sunday
 								</label>
 							</div>
 							<div class="modal-footer">
