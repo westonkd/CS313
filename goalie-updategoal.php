@@ -12,6 +12,9 @@ if (isset($_SESSION['email'])) {
 	$stmt->execute(array(':email' => $_SESSION['email']));
 	$currentGoal = $stmt->fetch();
 
-	echo $currentGoal['days_complete'];
+	echo "in: ".$currentGoal['days_complete'];
+	echo $_SESSION['email'];
+} else {
+	echo "not in ";
 }
 ?>
