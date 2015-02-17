@@ -142,7 +142,7 @@ if (!isset($_SESSION["signed-in"])) {
 						<h4 class="modal-title">Update Goal Status</h4>
 					</div>
 					<div class="modal-body">
-						<form action="goalie-updategoal.php" method="post">
+						<form action="goalie-updategoal.php" method="postf">
 							<p><strong>Which days did you meet your goal on?</strong></p>
 
 							<div class="checkbox">
@@ -186,12 +186,13 @@ if (!isset($_SESSION["signed-in"])) {
 									<input type="checkbox"> Sunday
 								</label>
 							</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-primary">Save Update</button>
+								<a href="#" class="btn btn-danger">Delete Goal</a>
+							</div>
 						</form>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-primary">Save Update</button>
-						<a href="#" class="btn btn-danger">Delete Goal</a>
-					</div>
+					
 				</div>
 			</div>
 		</div>
