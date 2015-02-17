@@ -153,37 +153,37 @@ if (!isset($_SESSION["signed-in"])) {
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="2"> Tuesday
+									<input type="checkbox" name="days-completed[]" value="1"> Tuesday
 								</label>
 							</div>
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="3"> Wednesday
+									<input type="checkbox" name="days-completed[]" value="2"> Wednesday
 								</label>
 							</div>
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="4"> Thursday
+									<input type="checkbox" name="days-completed[]" value="3"> Thursday
 								</label>
 							</div>
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="5"> Friday
+									<input type="checkbox" name="days-completed[]" value="4"> Friday
 								</label>
 							</div>
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="6"> Saturday
+									<input type="checkbox" name="days-completed[]" value="5"> Saturday
 								</label>
 							</div>
 
 							<div class="checkbox">
 								<label>
-									<input type="checkbox" name="days-completed[]" value="7"> Sunday
+									<input type="checkbox" name="days-completed[]" value="6"> Sunday
 								</label>
 							</div>
 							<div class="modal-footer">
