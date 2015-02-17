@@ -23,7 +23,7 @@ if (isset($_SESSION['email']) && !empty($_POST['days-completed'])) {
 	$stmt->execute(array(':email' => $_SESSION['email'], ':newDate' => $newDaysSet, ':percent' => count($days) / 7));
 
     echo $newDaysSet."\n";
-	echo "in: ".$currentGoal['days_complete'];
+	echo "in: ".$currentGoal['days_complete']. (count($days) / 7);
 
 } 
 ?>
