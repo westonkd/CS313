@@ -20,10 +20,10 @@ if (isset($_SESSION['email']) && !empty($_POST['days-completed'])) {
 
     //update the days completed on
     $stmt = $db->prepare("UPDATE goal INNER JOIN user ON goal.user_id = user.id SET goal.days_complete=:newDate, goal.percent_complete=:percent WHERE email=:email AND is_current_goal=1");
-	$stmt->execute(array(':email' => $_SESSION['email'], ':newDate' => $newDaysSet, ':percent' => count($days) / 7));
+	$stmt->execute(array(':email' => $_SESSION['email'], ':newDate' => $newDaysSet, ':percent' => (int)(count($days) / 7 * 100));
 
     echo $newDaysSet."\n";
-	echo "in: ".$currentGoal['days_complete']. (count($days) / 7);
+	echo "in: ".$currentGoal['days_complete']. (int)(count($days) / 7 * 100);
 
 } 
 ?>
