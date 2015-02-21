@@ -10,6 +10,9 @@ if (isset($_SESSION["signed-in"] || !isset($_POST['email']))) {
 	require("dbConnector.php");
 	$db = loadDatabase();
 
+	//password decription
+	require("password.php");
+
 	$attemptEmail = $_POST['email'];
 	$attemptPass = $_POST['password'];
 
