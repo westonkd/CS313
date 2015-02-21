@@ -1,7 +1,8 @@
 <?php 
 session_start();
 
-if (isset($_SESSION["signed-in"])) {
+//if a current session is active or no post variables are set
+if (isset($_SESSION["signed-in"] || !isset($_POST['email']))) {
 	//redirect to the main page
 	header( 'Location: /goalie.php' );
 } else {
@@ -18,11 +19,8 @@ if (isset($_SESSION["signed-in"])) {
 	$user = $stmt->fetch();
 
 	//check if the email is in the database
-	if ($user){
-		echo "There is a user!";
-		echo "\nComparing: ". $attemptPass . "with " . $user['password'];
-		if ($attemptPass == $user['password'])
-		{
+	if ($user) {
+		if (password_verify($attemptPass, user['password'])) {
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['signed-in'] = true;
 
