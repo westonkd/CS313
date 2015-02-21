@@ -88,6 +88,7 @@ session_start();
 							<input id="reenter" type="password" name="reenter" class="form-control" placeholder="Password">
 						</div>
 						<div class="modal-footer">
+							<p>After creating a new account you will be redirected to the login page.</p>
 							<button type="submit" class="btn btn-primary">Create Account</button>
 							<button type="cancel" class="btn btn-info">Cancel</a>
 						</div>
