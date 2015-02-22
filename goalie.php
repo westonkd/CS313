@@ -67,8 +67,8 @@ if (!isset($_SESSION["signed-in"])) {
 			</div>
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Welcome <?php echo $user['first_name'] ?></a></li>
 					<li><a href="goalie-new-goal.php">Set a New Goal</a></li>
-					<li><a href="goalie-settings.php"><?php echo $user['first_name'] ?>'s Settings</a></li>
 					<li><a href="/logout.php">Logout</a></li>
 				</ul>
 
@@ -189,7 +189,6 @@ if (!isset($_SESSION["signed-in"])) {
 							</div>
 							<div class="modal-footer">
 								<button type="submit" class="btn btn-primary">Save Update</button>
-								<a href="#" class="btn btn-danger">Delete Goal</a>
 							</div>
 						</form>
 					</div>

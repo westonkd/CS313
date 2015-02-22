@@ -41,7 +41,6 @@ if (!isset($_SESSION["signed-in"]))
 			<div class="navbar-collapse collapse" id="navbar-main">
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="goalie.php">Current Goal</a></li>
-					<li><a href="goalie-settings.php">Weston's Settings</a></li>
 					<li><a href="/logout.php">Logout</a></li>
 				</ul>
 
