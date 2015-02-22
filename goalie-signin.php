@@ -34,10 +34,7 @@ session_start();
 			<div class="col-all-12">
 				<div class="sign-in">
 					<h1>Goalie Sign In</h1>
-					<p>
-						<strong>Note:</strong> feel free to create an account for testing purposes. Please not that passwords are not stored securely.
-					</p>
-					<form class="form-horizontal" method="post" action="login.php">
+					<form class="form-horizontal" method="post" action="login.php" onsubmit="return validateLogin();">
 						<fieldset>
 							<div class="form-group">
 								<label for="inputEmail" class="col-lg-2 control-label">Email</label>
@@ -63,7 +60,7 @@ session_start();
 		<div class="modal fade" id="create-account-modal">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<form action="goalie-newaccount.php" method="post" onsubmit="return validate();">
+					<form action="goalie-newaccount.php" method="post" onsubmit="return validateNewUser();">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 							<h4 class="modal-title">Creat Account</h4>
@@ -106,8 +103,17 @@ session_start();
 			$('#create-account-modal').modal();
 		});
 
+		//function to validate login boxes
+		function validateLogin() {
+			if ($('#inputEmail').val() == "" || $('#inputPassword').val() == "") {
+				return false;
+			}
+
+			return true;
+		}
+
 		//function to validate the new user form
-		function validate() {
+		function validateNewUser() {
 
 			//if the passwords match
 			if ($('#reenter').val() == $('#password').val()) {
