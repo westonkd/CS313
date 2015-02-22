@@ -19,7 +19,7 @@ $stmt->execute(array(':email' => $email));
 $user = $stmt->fetch();
 
 //if the passwords don't match or the email address is already taken
-if (!$password == $rePassword || user)
+if (!$password == $rePassword || $user)
 {
 	header('Location: goalie-createfail.php');
 	die();
