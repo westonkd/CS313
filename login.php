@@ -17,21 +17,27 @@ if (isset($_SESSION["signed-in"] || !isset($_POST['email']))) {
 	$attemptEmail = $_POST['email'];
 	$attemptPass = $_POST['password'];
 
+	echo $attemptEmail . $attemptPass . "\n";
+
 	//get the current user
 	$stmt = $db->prepare("SELECT * FROM user WHERE email=:email ");
 	$stmt->execute(array(':email' => $attemptEmail));
 	$user = $stmt->fetch();
 
+	echo $user['password'];
+	
 	//check if the email is in the database
 	if ($user) {
 		if (password_verify($attemptPass, $user['password'])) {
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['signed-in'] = true;
 
-			header( 'Location: /goalie.php');
+			header('Location: /goalie.php');
+			die();
 		} 
 	} 
 
+	//login not succesful
 	header( 'Location: /goalie-signin.php' );	
 }
 ?>
