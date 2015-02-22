@@ -106,7 +106,7 @@ session_start();
 		});
 
 		function validate() {
-			return false;
+			return true;
 		}
 	</script>
 </body>
