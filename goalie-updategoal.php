@@ -25,4 +25,5 @@ if (isset($_SESSION['email']) && !empty($_POST['days-completed'])) {
 } 
 //finished, go home
 header( 'Location: /goalie.php' );
+die();
 ?>

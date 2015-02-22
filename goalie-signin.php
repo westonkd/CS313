@@ -6,6 +6,7 @@ session_start();
 	{
 		//redirect to the main page
 		header( 'Location: goalie.php' ) ;
+		die();
 	}
 ?>
 <!DOCTYPE html>

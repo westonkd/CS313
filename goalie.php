@@ -5,6 +5,7 @@ session_start();
 if (!isset($_SESSION["signed-in"])) {
 	//redirect to the main page
 	header( 'Location: /goalie-signin.php' );
+	die();
 } else {
 	//connect to the DB
 	require("dbConnector.php");
