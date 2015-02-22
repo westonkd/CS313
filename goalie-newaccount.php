@@ -13,10 +13,15 @@ $db = loadDatabase();
 
 require("password.php");
 
+//check if the email address is already used
+$stmt = $db->prepare("SELECT * FROM user WHERE email=:email");
+$stmt->execute(array(':email' => $email));
+$user = $stmt->fetch();
+
 //if the passwords don't match or the email address is already taken
-if (!$password == $rePassword)
+if (!$password == $rePassword && !user)
 {
-	header('Location: goalie-signin.php');
+	header('Location: goalie-createfail.php');
 	die();
 }
 
