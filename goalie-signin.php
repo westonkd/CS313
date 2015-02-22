@@ -69,6 +69,7 @@ session_start();
 							<h4 class="modal-title">Creat Account</h4>
 						</div>
 						<div class="modal-body">
+						<div id="warning-area"></div>
 							<label for="first-name" class="control-label">First Name</label>
 							<input id="first-name" type="text" name="firstName" class="form-control" placeholder="First Name">
 
@@ -105,8 +106,24 @@ session_start();
 			$('#create-account-modal').modal();
 		});
 
+		//function to validate the new user form
 		function validate() {
-			return true;
+
+			//if the passwords match
+			if ($('#reenter').val() == $('#password').val()) {
+				//if the fields are not empty
+				if ($('#password').val() != "" && $('#first-name').val() != "" && $('#first-name').val() != "" && $('#last-name').val() != "") {
+					return true;
+				} else {
+					$('#warning-area').html("<div class='alert alert-info' role='alert'>All fields are required</div>");
+					return false;
+				}
+				
+			} 
+
+			$('#warning-area').html("<div class='alert alert-info' role='alert'>Passwords do not match.</div>");
+			$('#password').focus();
+			return false;
 		}
 	</script>
 </body>
