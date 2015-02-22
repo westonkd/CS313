@@ -63,7 +63,7 @@ session_start();
 		<div class="modal fade" id="create-account-modal">
 			<div class="modal-dialog">
 				<div class="modal-content">
-					<form action="goalie-newaccount.php" method="post">
+					<form action="goalie-newaccount.php" method="post" onsubmit="return validate();">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 							<h4 class="modal-title">Creat Account</h4>
@@ -104,6 +104,10 @@ session_start();
 		$('#create-account').click(function(){
 			$('#create-account-modal').modal();
 		});
+
+		function validate() {
+			return false;
+		}
 	</script>
 </body>
 </html>
