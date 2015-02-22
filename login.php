@@ -23,7 +23,7 @@ if (isset($_SESSION["signed-in"] || !isset($_POST['email']))) {
 
 	//check if the email is in the database
 	if ($user) {
-		if (password_verify($attemptPass, user['password'])) {
+		if (password_verify($attemptPass, $user['password'])) {
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['signed-in'] = true;
 
